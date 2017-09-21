@@ -41,7 +41,7 @@ public final class Factorial {
      * Write this function.
      *
      * @param input an integer.
-x     * @return the factorial of input if it is valid, or FACTORIAL_INVALID if it is not.
+     * @return the factorial of input if it is valid, or FACTORIAL_INVALID if it is not.
      * @see <a href="https://en.wikipedia.org/wiki/Factorial">Factorial Definition</a>
      */
     public static long factorial(final int input) {
