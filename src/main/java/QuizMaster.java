@@ -11,7 +11,50 @@ import java.util.regex.Pattern;
  * @see <a href="https://cs125.cs.illinois.edu/MP/1/">MP1 Documentation</a>
  */
 
+
 public final class QuizMaster {
+
+    /**
+     * Points for correct answer.
+     */
+    public static final int CORRECT_ANSWER = 10;
+
+
+    /**
+     *Maximum possible score.
+     */
+    public static final int MAX_SCORE = 40;
+
+
+    /**
+     * Bonus points for illinios student.
+     */
+    public static final int ILLINI_BONUS_POINT = 5;
+
+
+    /**
+     * Minimum zip code for illinois students.
+     */
+    public static final int ILLINI_ZIP_MIN = 60000;
+
+
+    /**
+     * Maximum zip code for illinois students.
+     */
+    public static final int ILLINI_ZIP_MAX = 62999;
+
+
+    /**
+     *Minimum zipcde for michigan students.
+     */
+    public static final int UMICH_ZIP_MIN = 48000;
+
+
+    /**
+     * maximum zipcode for michigan students.
+     */
+    public static final int UMICH_ZIP_MAX = 48999;
+
 
     /**
      * Compute a score based on entered ZIP code and answers.
@@ -39,7 +82,42 @@ public final class QuizMaster {
     public static int computeScore(final int zipCode, final Boolean diversityAnswerCorrect,
             final Boolean illiacAnswerCorrect, final Boolean mosaicAnswerCorrect,
             final Boolean variableAnswerCorrect) {
-        return 0;
+        int score = 0;
+
+        if (diversityAnswerCorrect) {
+            score = score + CORRECT_ANSWER;
+        }
+
+        if (illiacAnswerCorrect) {
+            score = score + CORRECT_ANSWER;
+        }
+
+        if (mosaicAnswerCorrect) {
+            score = score + CORRECT_ANSWER;
+        }
+
+        if (variableAnswerCorrect) {
+            score = score + CORRECT_ANSWER;
+        }
+
+        if (zipCode >= ILLINI_ZIP_MIN) {
+            if (zipCode <= ILLINI_ZIP_MAX) {
+                if (score <= MAX_SCORE - ILLINI_BONUS_POINT) {
+                    score = score + ILLINI_BONUS_POINT;
+                    }
+                }
+            }
+
+        if (zipCode >= UMICH_ZIP_MIN) {
+            if (zipCode <= UMICH_ZIP_MAX) {
+                if (score < MAX_SCORE) {
+                    score = 0;
+                }
+            }
+        }
+
+
+        return score;
     }
 
     /**********************************************************************************************

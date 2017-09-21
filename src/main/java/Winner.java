@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 /**
@@ -25,8 +26,17 @@ public class Winner {
      * @return the three scores in descending order as a comma-delimited string
      */
     public static String winner(final int firstScore, final int secondScore, final int thirdScore) {
-        // This is clearly incorrect
-        return "";
+
+
+
+        ArrayList<Integer> check = new ArrayList<>();
+        check.add(firstScore);
+        check.add(secondScore);
+        check.add(thirdScore);
+        Collections.sort(check, Collections.reverseOrder());
+        //return (firstScore + ", " + secondScore  + ", " + thirdScore);
+        return check.get(0) + ", " + check.get(1) + ", " + check.get(2);
+
     }
 
     /**********************************************************************************************
