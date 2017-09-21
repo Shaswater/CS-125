@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 /**
@@ -40,11 +41,28 @@ public final class Factorial {
      * Write this function.
      *
      * @param input an integer.
-     * @return the factorial of input if it is valid, or FACTORIAL_INVALID if it is not.
+x     * @return the factorial of input if it is valid, or FACTORIAL_INVALID if it is not.
      * @see <a href="https://en.wikipedia.org/wiki/Factorial">Factorial Definition</a>
      */
-    public static int factorial(final int input) {
-        return FACTORIAL_INVALID;
+    public static long factorial(final int input) {
+
+
+        int counter = 1;
+        long result = 1;
+
+        while (counter <= input) {
+              result = counter * result;
+              counter = counter + 1;
+        }
+
+        if (input < FACTORIAL_MIN) {
+            return FACTORIAL_INVALID;
+        } else if (input > FACTORIAL_MAX) {
+            return FACTORIAL_INVALID;
+        }
+
+       return result;
+
     }
 
     /**********************************************************************************************
@@ -108,3 +126,5 @@ public final class Factorial {
         lineScanner.close();
     }
 }
+
+
