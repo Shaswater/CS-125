@@ -35,25 +35,25 @@ public final class QuizMaster {
     /**
      * Minimum zip code for illinois students.
      */
-    public static final int ILLINI_ZIP_MIN = 60000;
+    public static final int ILLINI_ZIP_MIN = 61800;
 
 
     /**
      * Maximum zip code for illinois students.
      */
-    public static final int ILLINI_ZIP_MAX = 62999;
+    public static final int ILLINI_ZIP_MAX = 61900;
 
 
     /**
      *Minimum zipcde for michigan students.
      */
-    public static final int UMICH_ZIP_MIN = 48000;
+    public static final int UMICH_ZIP_MIN = 48100;
 
 
     /**
      * maximum zipcode for michigan students.
      */
-    public static final int UMICH_ZIP_MAX = 48999;
+    public static final int UMICH_ZIP_MAX = 48200;
 
 
     /**
